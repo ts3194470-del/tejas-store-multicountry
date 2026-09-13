@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejas Store - Apps & Security</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Tejas Store</h1>
+            <p id="tagline">Your Trusted App Platform & Security Scanner</p>
+        </div>
+        <div class="header-controls">
+            <select id="languageSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="hi">हिन्दी</option>
+                <option value="zh">中文</option>
+            </select>
+            <select id="countrySelect" onchange="changeCountry(this.value)">
+                <option value="us">🇺🇸 USA</option>
+                <option value="uk">🇬🇧 UK</option>
+                <option value="in">🇮🇳 India</option>
+                <option value="mx">🇲🇽 Mexico</option>
+                <option value="es">🇪🇸 Spain</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="de">🇩🇪 Germany</option>
+                <option value="cn">🇨🇳 China</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <button class="active" onclick="switchTab('store', event)" id="navStore">Store</button>
+        <button onclick="switchTab('scanner', event)" id="navScanner">Virus Scanner</button>
+    </nav>
+
+    <div class="container">
+        <!-- Store Section -->
+        <div id="store" class="section active">
+            <h2 id="storeTitle">Available Apps</h2>
+            <div id="appsContainer"></div>
+        </div>
+
+        <!-- Scanner Section -->
+        <div id="scanner" class="section">
+            <h2 id="scannerTitle">App Virus Scanner</h2>
+            <p id="scannerDesc">Check any app or file for safety and malware</p>
+            
+            <input type="file" id="fileInput"><br>
+            <button class="btn" onclick="checkVirus()" id="scanButton">Scan File</button>
+            
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p id="footerText">© 2026 Tejas Store. All rights reserved.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
